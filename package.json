@@ -13,9 +13,9 @@
     "del": "5.1",
     "express": "4.17.1",
     "gulp-browserify": "0.5.1",
-    "gulp-uglify": "3.0.1",
     "vueify": "9.4.1",
-    "vue": "2.6.11"
+    "vue": "2.6.11",
+    "gulp-terser": "1.2.0"
   },
   "engines": {
     "node": "12.0"

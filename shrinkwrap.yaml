@@ -4,7 +4,7 @@ dependencies:
   gulp: 4.0.2
   gulp-browserify: 0.5.1
   gulp-sass: 4.0.2
-  gulp-uglify: 3.0.1
+  gulp-terser: 1.2.0
   vue: 2.6.11
   vueify: 9.4.1
 packages:
@@ -2028,19 +2028,15 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-q8psj4+aDrblJMMtRxihNBdovfzGrXJp1l4JU0Sz4b/Mhsi2DPrKFYCGDwjIWRENs04ELVHxdOJQ7Vs98OFohg==
-  /gulp-uglify/3.0.1:
+  /gulp-terser/1.2.0:
     dependencies:
-      gulplog: 1.0.0
-      has-gulplog: 0.1.0
-      lodash: 4.17.15
-      make-error-cause: 1.2.2
-      safe-buffer: 5.2.0
-      through2: 2.0.5
-      uglify-js: 3.8.0
+      plugin-error: 1.0.1
+      terser: 4.6.6
+      through2: 3.0.1
       vinyl-sourcemaps-apply: 0.2.1
     dev: false
     resolution:
-      integrity: sha512-KVffbGY9d4Wv90bW/B1KZJyunLMyfHTBbilpDvmcrj5Go0/a1G3uVpt+1gRBWSw/11dqR3coJ1oWNTt1AiXuWQ==
+      integrity: sha512-lf+jE2DALg2w32p0HRiYMlFYRYelKZPNunHp2pZccCYrrdCLOs0ItbZcN63yr2pbz116IyhUG9mD/QbtRO1FKA==
   /gulp-util/2.2.20:
     dependencies:
       chalk: 0.5.1
@@ -2121,14 +2117,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=
-  /has-gulplog/0.1.0:
-    dependencies:
-      sparkles: 1.0.1
-    dev: false
-    engines:
-      node: '>= 0.10'
-    resolution:
-      integrity: sha1-ZBTIKRNpfaUVkDl9r7EvIpZ4Ec4=
   /has-symbols/1.0.1:
     dev: false
     engines:
@@ -2903,16 +2891,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-sWZlbEP2OsHNkXrMl5GYk/jKk70MBng6UU4YI/qGDYbgf6YbP4EvmqISbXCoJiRKs+1bSpFHVgQxvJ17F2li5g==
-  /make-error-cause/1.2.2:
-    dependencies:
-      make-error: 1.3.6
-    dev: false
-    resolution:
-      integrity: sha1-3wOI/NCzeBbf8KX7gQiTl3fcvJ0=
-  /make-error/1.3.6:
-    dev: false
-    resolution:
-      integrity: sha512-s8UhlNe7vPKomQhC1qFelMokr/Sc3AgNbso3n74mVPA5LTZwkB9NlXf4XPamLxJE8h0gh73rM94xvwRT2CVInw==
   /make-iterator/1.0.1:
     dependencies:
       kind-of: 6.0.3
@@ -4004,6 +3982,16 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Ebho8K4jIbHAxnuxi7o42OrZgF/ZTNcsZj6nRKyUmkhLFq8CHItp/fy6hQZuZmP/n3yZ9VBUbp4zz/mX8hmYPw==
+  /readable-stream/3.6.0:
+    dependencies:
+      inherits: 2.0.4
+      string_decoder: 1.3.0
+      util-deprecate: 1.0.2
+    dev: false
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-BViHy7LKeTz4oNnkcLJ+lVSL6vpiFeX6/d3oSH8zCW7UxP2onchk+vTGB143xuFjHS3deTgkKoXXymXqymiIdA==
   /readdirp/2.2.1:
     dependencies:
       graceful-fs: 4.2.3
@@ -4411,6 +4399,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Htz+RnsXWk5+P2slx5Jh3Q66vhQj1Cllm0zvnaY98+NFx+Dv2CF/f5O/t8x+KaNdrdIAsruNzoh/KpialbqAnw==
+  /source-map-support/0.5.16:
+    dependencies:
+      buffer-from: 1.1.1
+      source-map: 0.6.1
+    dev: false
+    resolution:
+      integrity: sha512-efyLRJDr68D9hBBNIPWFjhpFzURh+KJykQwvMyW5UiZzYwoF6l4YMMDIJJEyFWxWCqfyxLzz6tSfUFR+kXXsVQ==
   /source-map-url/0.4.0:
     dev: false
     resolution:
@@ -4608,6 +4603,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==
+  /string_decoder/1.3.0:
+    dependencies:
+      safe-buffer: 5.2.0
+    dev: false
+    resolution:
+      integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==
   /strip-ansi/0.3.0:
     dependencies:
       ansi-regex: 0.2.1
@@ -4721,6 +4722,17 @@ packages:
     dev: false
     resolution:
       integrity: sha512-FCEhQ/4rE1zYv9rYXJw/msRqsnmlje5jHP6huWeBZ704jUTy02c5AZyWujpMR1ax6mVw9NyJMfuK2CMDWVIfgA==
+  /terser/4.6.6:
+    dependencies:
+      commander: 2.20.3
+      source-map: 0.6.1
+      source-map-support: 0.5.16
+    dev: false
+    engines:
+      node: '>=6.0.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-4lYPyeNmstjIIESr/ysHg2vUPRGf2tzF9z2yYwnowXVuVzLEamPN1Gfrz7f8I9uEPuHcbFlW4PLIAsJoxXyJ1g==
   /through/2.2.7:
     dev: false
     resolution:
@@ -4757,6 +4769,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-/mrRod8xqpA+IHSLyGCQ2s8SPHiCDEeQJSep1jqLYeEUClOFG2Qsh+4FU6G9VeqpZnGW/Su8LQGc4YKni5rYSQ==
+  /through2/3.0.1:
+    dependencies:
+      readable-stream: 3.6.0
+    dev: false
+    resolution:
+      integrity: sha512-M96dvTalPT3YbYLaKaCuwu+j06D/8Jfib0o/PxbVt6Amhv3dUAtW6rTV1jPgJSBG83I/e04Y6xkVdVhSRhi0ww==
   /time-stamp/1.1.0:
     dev: false
     engines:
@@ -4908,16 +4926,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-+tV1XB4Vd2WLsG/5q25UjJW+vW4=
-  /uglify-js/3.8.0:
-    dependencies:
-      commander: 2.20.3
-      source-map: 0.6.1
-    dev: false
-    engines:
-      node: '>=0.8.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-ugNSTT8ierCsDHso2jkBHXYrU8Y5/fY2ZUprfrJUiD7YpuFvV4jODLFmb3h4btQjqr5Nh4TX4XtgDfCU1WdioQ==
   /uglify-to-browserify/1.0.2:
     dev: false
     resolution:
@@ -5331,6 +5339,6 @@ specifiers:
   gulp: 4.0.2
   gulp-browserify: 0.5.1
   gulp-sass: 4.0.2
-  gulp-uglify: 3.0.1
+  gulp-terser: 1.2.0
   vue: 2.6.11
   vueify: 9.4.1

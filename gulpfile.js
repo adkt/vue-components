@@ -6,13 +6,14 @@ var refreshFile = './zrefresh.txt';
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserify = require('gulp-browserify');
-var uglify = require('gulp-uglify');
+var terser = require('gulp-terser');
 var vueify = require('vueify');
 var del = require('del');
 
 gulp.task('join', () => {
   return gulp.src(source)
-    .pipe(browserify({transform: [[{_flags: {debug: true}}, vueify]]}))
+    .pipe(browserify({transform: [[{_flags: {debug: false}}, vueify]]}))
+    .pipe(terser())
     .pipe(gulp.dest(dest))
 });
 
